@@ -1,0 +1,21 @@
+h1{
+    font-size: 30px;
+    color: red;
+    margin: 20px;
+}
+
+form, button{
+    margin: 20px;
+}
+
+#laps{
+    display: none;
+}
+
+.wrapper{
+    text-align: center;
+    background-color: yellow;
+    width: 60%;
+    margin: 0 auto;
+    
+}
