@@ -14,7 +14,7 @@ var h = 1,
     init = 0;
 var currentCount = 1;
 var paus = true;
-var razni = 0;
+var timeLap = '';
 
 //функция для очистки поля
 function ClearСlock() {
@@ -96,24 +96,7 @@ function StartTIME() {
     clocktimer = setTimeout("StartTIME()", 1);
 }
 
-//функция добавления круга
-newLap.addEventListener('click', function(keyPressed){
-        var newLi = document.createElement('li');
-        var newSpan = document.createElement('span');
-        
-        function makeCounter() {
-            return currentCount++;
-        };
-        var counter = makeCounter();
-        
-        function makeTime() {
-            return razni = parseInt(readout) - razni;
-        };
-        var timeLap = makeTime();
-        
-        newSpan.innerHTML = 'Круг № ' + counter + ', общее время круга - ';
-        ulTime.appendChild(newLi).append(newSpan, ' ' + readout, ', время круга - ' + timeLap);
-});
+
 
 //функция паузы
 function PausaBut(){
@@ -134,9 +117,36 @@ function StartStop() {
         StartTIME();
         init = 1;
         startKal.textContent = 'Stop'; 
+        
     } else {
         clearTimeout(clocktimer);
         init = 0;
         startKal.textContent = 'Start'; 
     }
 };
+
+
+function TimeL() {
+    if (paus == true) {
+        document.MyForm.stopwatch.value = timeLap;
+        clearTimeout(clocktimer);
+        StartTIME();
+    } 
+};
+
+
+
+//функция добавления круга
+newLap.addEventListener('click', function(keyPressed){
+    var newLi = document.createElement('li');
+    var newSpan = document.createElement('span');
+    
+    function makeCounter() {
+        return currentCount++;
+    };
+    var counter = makeCounter();
+    var lol = TimeL();
+    newSpan.innerHTML = 'Круг № ' + counter + ', общее время круга - ';
+    ulTime.appendChild(newLi).append(newSpan, ' ' + readout, ', время круга - ' + lol);
+});
+
