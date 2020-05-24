@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="" name="form">
+            <input type="text" id="display" name="monitor" value="">
+        </form>
+        <div class="row">
+            <button class="number" id="zero" onclick="input('0')">0</button>
+            <button class="number" id="one" onclick="input('1')">1</button>
+            <button class="number" id="two" onclick="input('2')">2</button>
+            <button class="number" id="tree" onclick="input('3')">3</button>
+            <button class="number" id="four" onclick="input('4')">4</button>
+            <button class="number" id="five" onclick="input('5')">5</button>
+        </div>
+        <div class="row">
+            <button class="number" id="six" onclick="input('6')">6</button>
+            <button class="number" id="seven" onclick="input('7')">7</button>
+            <button class="number" id="eight" onclick="input('8')">8</button>
+            <button class="number" id="nine" onclick="input('9')">9</button>
+            <button class="operation" value="+">+</button>
+            <button id="equally">=</button>
+        </div>
+        <div class="row">
+            <button class="operation" value="-">-</button>
+            <button class="operation" value="/">/</button>
+            <button class="operation" id="umnojenie" value="*">*</button>
+            <button class="operation" id="procent" value="%">%</button>
+            <button id="sinus">sin</button>
+            <button id="cosinus">cos</button>
+        </div>
+        <div class="row">
+            <button onclick="radInDeg()">R>D</button>
+            <button class="operation" value="**">**</button>
+            <button id="tg">tg</button>
+            <button id="ctg">ctg</button>
+            <button onclick="input('.')">.</button>
+            <button id="clear">C</button>
+        </div>
+        <div id="list">
+            <ol id="history">
+            </ol>
+            <button id="clearHist" onclick="clearHist()">CLEAR HISTORY</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

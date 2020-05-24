@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="./style.css">
+</head>
+<body>
+    <div class="container">
+       <form id="books">
+            <div>
+                <label for="title"> Название книги </label>
+                <input id="title" type="text">
+            </div>
+            <div>
+                <label for="autor"> Автор </label>
+                <input id="autor" type="text">
+            </div>
+            <div>
+                <label for="publishing"> Издательство </label>
+                <input id="publishing" type="text">
+            </div>
+            <div>
+                <label for="year"> Год </label>
+                <input id="year" type="text">
+            </div>
+            <div>
+                <label for="instance"> Количество экземпляров </label>
+                <input id="instance" type="text">
+            </div>
+            <div>
+                <label for="ide"> ID </label>
+                <input id="ide" type="text">
+            </div>
+            <div>
+                <label for="pages"> Количество страниц </label>
+                <input id="pages" type="text">
+            </div>
+            <div>
+                <input type="submit" value="Добавить книгу">
+            </div>
+        </form>
+    
+        <form id="travel-books">
+                <div>
+                    <label for="titleTB"> Название книги </label>
+                    <input id="titleTB" type="text">
+                </div>
+                <div>
+                    <label for="publishingTB"> Издательство </label>
+                    <input id="publishingTB" type="text">
+                </div>
+                <div>
+                    <label for="instanceTB"> Количество экземпляров </label>
+                    <input id="instanceTB" type="text">
+                </div>
+                <div>
+                    <label for="pagesTB"> Количество страниц </label>
+                    <input id="pagesTB" type="text">
+                </div>
+                <div>
+                    <input type="submit" value="Добавить книгу">
+                </div>
+            </form>
+    </div>
+
+    <div class="list">    
+        <ol id="list-books">
+            <ul>
+                <li> Название </li>
+                <li> Автор </li>
+                <li> Год издания</li>
+                <li> Издательство </li>
+                <li> ID </li>
+                <li> Количество экземпляров </li>
+                <li> Количество страниц </li>
+                <li> Удаление</li> 
+            </ul>
+
+        </ol>
+    </div>
+
+    <script src="./book.js"></script>
+    <script src="./viewbook.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

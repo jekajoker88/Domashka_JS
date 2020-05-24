@@ -15,6 +15,7 @@ var h = 1,
 var currentCount = 1;
 var paus = true;
 var timeLap = '';
+var firstRay = [];
 
 //функция для очистки поля
 function ClearСlock() {
@@ -91,7 +92,7 @@ function StartTIME() {
             dh = '00';
         }
     }
-    readout = dh + ':' + dm + ':' + ds + ':' + ms;
+    readout = dh + ' ' + dm + ' ' + ds + ' ' + ms;
     document.MyForm.stopwatch.value = readout;
     clocktimer = setTimeout("StartTIME()", 1);
 }
@@ -128,9 +129,11 @@ function StartStop() {
 
 function TimeL() {
     if (paus == true) {
-        document.MyForm.stopwatch.value = timeLap;
-        clearTimeout(clocktimer);
+        timeLap = document.MyForm.stopwatch.value;
+        /* clearTimeout(clocktimer); */
+        
         StartTIME();
+        return timeLap;
     } 
 };
 
@@ -138,15 +141,26 @@ function TimeL() {
 
 //функция добавления круга
 newLap.addEventListener('click', function(keyPressed){
+    var lol = TimeL();
     var newLi = document.createElement('li');
     var newSpan = document.createElement('span');
+    var tag = document.createElement('span');
     
+    tag.innerText = lol;
+    tag.className = 'lips';
+    
+
+
     function makeCounter() {
         return currentCount++;
     };
+
     var counter = makeCounter();
-    var lol = TimeL();
-    newSpan.innerHTML = 'Круг № ' + counter + ', общее время круга - ';
-    ulTime.appendChild(newLi).append(newSpan, ' ' + readout, ', время круга - ' + lol);
+    
+    newSpan.innerHTML = 'Круг № ' + counter + ', общее время круга - ' + tag;
+    ulTime.appendChild(newLi).append(newSpan, ' ' , ', время круга - ' + lol);
+    console.log(document.querySelectorAll('.lips'));
+    firstRay.push(...rest=document.MyForm.stopwatch.value.split(' '));
+    console.log(firstRay);
 });
 
